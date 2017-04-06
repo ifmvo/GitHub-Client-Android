@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/theme</color>
+    <color name="colorPrimaryDark">@color/theme</color>
+    <color name="colorAccent">@color/theme</color>
+
+    <color name="theme">#6cc5a3</color>
+
+    <color name="color_lay_bg">#f5f5f5</color>
+    <color name="color_line">#e6e6e6</color>
+    <color name="color_et_hint">@color/color_gray_7</color>
+    <color name="color_top_bar_title">@color/color_white</color>
+
+
+    <!--常用的一些color-->
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_transparent">#00000000</color>
+    <!-- 常用于 dialog 的背景 -->
+    <color name="color_transfer_black">#7a000000</color>
+
+    <color name="color_black_0">#000000</color>
+    <color name="color_black_1">#111111</color>
+    <color name="color_black_2">#222222</color>
+    <color name="color_black_3">#333333</color>
+    <color name="color_black_4">#444444</color>
+    <color name="color_black_5">#555555</color>
+
+
+    <color name="color_gray_9">#212121</color>
+    <color name="color_gray_8">#424242</color>
+    <color name="color_gray_7">#616161</color>
+    <color name="color_gray_6">#757575</color>
+    <color name="color_gray_5">#bdbdbd</color>
+    <color name="color_gray_4">#e0e0e0</color>
+    <color name="color_gray_3">#eeeeee</color>
+    <color name="color_gray_2">#f5f5f5</color>
+    <color name="color_gray_1">#fafafa</color>
+
+
+    <color name="color_blue">#23c9ff</color>
+    <color name="color_red_light">#e54a4a</color>
+    <color name="color_red">#FF0000</color>
+    <color name="color_yellow">#FFF7D23E</color>
+    <color name="color_green">#FF34A350</color>
+
+</resources>

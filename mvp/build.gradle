@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':Resource')
+    compile rootProject.ext.mvp["support-v4"]
+    compile rootProject.ext.mvp["appcompat-v7"]
+    compile rootProject.ext.mvp["design"]
+    compile rootProject.ext.mvp["butterknife"]
+    compile rootProject.ext.mvp["glide"]
+    compile rootProject.ext.mvp["gson"]
+    compile rootProject.ext.mvp["rxandroid"]
+    compile rootProject.ext.mvp["rxjava"]
+    compile rootProject.ext.mvp["retrofit"]
+    compile rootProject.ext.mvp["retrofit-converter-gson"]
+    compile rootProject.ext.mvp["retrofit-adapter-rxjava"]
+    //    compile rootProject.ext.mvp["okhttp3"]
+    compile rootProject.ext.mvp["rxlifecycle"]
+    compile rootProject.ext.mvp["rxlifecycle-android"]
+    compile rootProject.ext.mvp["rxlifecycle-components"]
+    compile rootProject.ext.mvp["rxpermissions"]
+    compile rootProject.ext.mvp["controller"]
+    compile rootProject.ext.mvp["avi-loading"]
+    //    compile 'com.android.support:appcompat-v7:25.2.0'
+
+}

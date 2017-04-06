@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="d_top_bar_h">50dp</dimen>
+    <dimen name="d_top_title_size">15.5sp</dimen>
+    <dimen name="d_line_h">0.1dp</dimen>
+    <dimen name="d_line_w">0.5dp</dimen>
+    <dimen name="d_bottom_tab_h">50dp</dimen>
+    <dimen name="d_banner_h">250dp</dimen>
+    <dimen name="d_indicator_h">50dp</dimen>
+    <dimen name="d_activity_mar_left">16dp</dimen>
+    <dimen name="d_activity_mar_right">16dp</dimen>
+
+</resources>

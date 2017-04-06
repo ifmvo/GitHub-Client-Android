@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/lay_baseContent"
+        android:layout_width="match_parent"
+        android:layout_weight="1000"
+        android:layout_height="0dp">
+
+    </FrameLayout>
+
+    <View style="@style/line_horizontal"/>
+
+    <LinearLayout
+        android:id="@+id/lay_bottomTabs"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:gravity="bottom"
+        android:layout_height="@dimen/d_bottom_tab_h"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+</LinearLayout>
