@@ -37,13 +37,14 @@ public class ReposAdapter extends SimpleRecAdapter<BeanRepos, ReposAdapter.Repos
         holder.tvTitle.setText(data.get(position).name);
     }
 
-    class ReposViewHolder extends RecyclerView.ViewHolder{
+    public class ReposViewHolder extends RecyclerView.ViewHolder{
 
         @BindView(R.id.tvTitle)
         TextView tvTitle;
 
         public ReposViewHolder(View itemView) {
             super(itemView);
+            tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
             KnifeKit.bind(itemView);
         }
     }

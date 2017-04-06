@@ -18,8 +18,9 @@ ext {
 
     mvp = [
             "recyclerview-v7"            : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
-            "controller"                 : "com.github.limedroid:XStateController:v1.1.1",
+//            "controller"                 : "com.github.limedroid:XStateController:v1.1.1",
 
+            "ultra-ptr"                  : "in.srain.cube:ultra-ptr:1.0.11",
             "appcompat-v7"               : "com.android.support:appcompat-v7:${android["VSupportSdk"]}",
             "support-v4"                 : "com.android.support:support-v4:${android["VSupportSdk"]}",
             "design"                     : "com.android.support:design:${android["VSupportSdk"]}",

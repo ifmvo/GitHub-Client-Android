@@ -27,6 +27,11 @@ public class UserPresenter extends XPresent<UserActivity> {
                     }
 
                     @Override
+                    protected void onPre() {
+
+                    }
+
+                    @Override
                     public void onNext(BeanUser beanUser) {
                         getV().showData(beanUser);
                     }

@@ -7,15 +7,19 @@ import org.json.JSONException;
 
 import java.net.UnknownHostException;
 
-import cn.droidlover.xdroidmvp.base.bean.IBean;
 import rx.Subscriber;
 
 /**
  * Created by wanglei on 2016/12/26.
  */
 
-public abstract class ApiSubcriber<T extends IBean> extends Subscriber<T> {
+public abstract class ApiSubcriber<T> extends Subscriber<T> {
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        onPre();
+    }
 
     @Override
     public void onError(Throwable e) {
@@ -43,10 +47,10 @@ public abstract class ApiSubcriber<T extends IBean> extends Subscriber<T> {
             }
             onFail(error);
         }
-
     }
 
     protected abstract void onFail(NetError error);
+    protected abstract void onPre();
 
     @Override
     public void onCompleted() {

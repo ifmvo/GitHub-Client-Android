@@ -6,6 +6,7 @@ import cn.droidlover.xdroidmvp.base.adapter.SimpleRecAdapter;
 import cn.droidlover.xdroidmvp.base.fragment.BaseFragmentRecyclerView;
 import cn.ifmvo.github.adapter.ReposAdapter;
 import cn.ifmvo.github.bean.BeanRepos;
+import cn.ifmvo.github.net.Common;
 import cn.ifmvo.github.presenter.ReposPresenter;
 
 /**
@@ -13,6 +14,8 @@ import cn.ifmvo.github.presenter.ReposPresenter;
  */
 
 public class IndexFragment extends BaseFragmentRecyclerView<BeanRepos, ReposPresenter> {
+
+    ReposAdapter reposAdapter;
 
     @Override
     public ReposPresenter newP() {
@@ -22,11 +25,14 @@ public class IndexFragment extends BaseFragmentRecyclerView<BeanRepos, ReposPres
     @NonNull
     @Override
     protected SimpleRecAdapter getAdapter() {
-        return new ReposAdapter(context);
+        if (reposAdapter == null){
+            reposAdapter = new ReposAdapter(context);
+        }
+        return reposAdapter;
     }
 
     @Override
     protected void getData(int page) {
-
+        getP().listUserRepos("ifmvo", page, 10, "", Common.sort.created, "");
     }
 }

@@ -23,6 +23,7 @@ dependencies {
     compile project(':Resource')
     compile rootProject.ext.mvp["support-v4"]
     compile rootProject.ext.mvp["appcompat-v7"]
+    compile rootProject.ext.mvp["ultra-ptr"]
     compile rootProject.ext.mvp["design"]
     compile rootProject.ext.mvp["butterknife"]
     compile rootProject.ext.mvp["glide"]
@@ -37,7 +38,7 @@ dependencies {
     compile rootProject.ext.mvp["rxlifecycle-android"]
     compile rootProject.ext.mvp["rxlifecycle-components"]
     compile rootProject.ext.mvp["rxpermissions"]
-    compile rootProject.ext.mvp["controller"]
+//    compile rootProject.ext.mvp["controller"]
     compile rootProject.ext.mvp["avi-loading"]
     //    compile 'com.android.support:appcompat-v7:25.2.0'
 

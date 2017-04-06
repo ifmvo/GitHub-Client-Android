@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import cn.droidlover.xdroidmvp.base.bean.IBean;
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -172,7 +171,7 @@ public class XApi {
      *
      * @return
      */
-    public static <T extends IBean> Observable.Transformer<T, ? extends T> getScheduler() {
+    public static <T> Observable.Transformer<T, ? extends T> getScheduler() {
         Observable.Transformer<T, ? extends T> transformer = new Observable.Transformer<T, T>() {
             @Override
             public Observable<T> call(Observable<T> observable) {
@@ -188,7 +187,7 @@ public class XApi {
      *
      * @return
      */
-    public static <T extends IBean> Observable.Transformer<T, ? extends T> getApiTransformer() {
+    public static <T> Observable.Transformer<T, ? extends T> getApiTransformer() {
         Observable.Transformer<T, ? extends T> transformer = new Observable.Transformer<T, T>() {
             @Override
             public Observable<T> call(Observable<T> observable) {
@@ -196,15 +195,18 @@ public class XApi {
                 return observable.flatMap(new Func1<T, Observable<T>>() {
                     @Override
                     public Observable<T> call(T model) {
-                        if (model == null || model.isNull()) {
-                            return Observable.error(new NetError(model.getErrorMsg(), NetError.NoDataError));
-                        } else if (model.isAuthError()) {
-                            return Observable.error(new NetError(model.getErrorMsg(), NetError.AuthError));
-                        } else if (model.isBizError()) {
-                            return Observable.error(new NetError(model.getErrorMsg(), NetError.BusinessError));
-                        } else {
+                        if (model == null) {
+                            return Observable.error(new NetError("没有数据", NetError.NoDataError));
+                        }
+//                        else if (model.isAuthError()) {
+//                            return Observable.error(new NetError("", NetError.AuthError));
+//                        } else if (model.isBizError()) {
+//                            return Observable.error(new NetError("业务异常", NetError.BusinessError));
+//                        }
+                        else {
                             return Observable.just(model);
                         }
+//                        return Observable.error(new NetError("异常", NetError.OtherError));
                     }
 
                 });
