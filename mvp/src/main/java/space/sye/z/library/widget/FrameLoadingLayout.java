@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.ifmvo.matthew.R;
-
+import cn.droidlover.xdroidmvp.R;
 import space.sye.z.library.manager.RecyclerMode;
 
 /**

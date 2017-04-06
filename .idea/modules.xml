@@ -5,10 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/GitHub-Client-Android.iml" filepath="$PROJECT_DIR$/GitHub-Client-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/Github.iml" filepath="$PROJECT_DIR$/Github.iml" />
       <module fileurl="file://$PROJECT_DIR$/Resource/Resource.iml" filepath="$PROJECT_DIR$/Resource/Resource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Resource/Resource.iml" filepath="$PROJECT_DIR$/Resource/Resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mvp/mvp.iml" filepath="$PROJECT_DIR$/mvp/mvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvp/mvp.iml" filepath="$PROJECT_DIR$/mvp/mvp.iml" />
     </modules>
   </component>

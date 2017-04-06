@@ -13,11 +13,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ifmvo.matthew.R;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import cn.droidlover.xdroidmvp.R;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrUIHandler;
 import in.srain.cube.views.ptr.indicator.PtrIndicator;

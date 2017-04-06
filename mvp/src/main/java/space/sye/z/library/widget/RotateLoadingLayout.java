@@ -14,8 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.ifmvo.matthew.R;
-
+import cn.droidlover.xdroidmvp.R;
 import space.sye.z.library.manager.RecyclerMode;
 
 /**
@@ -55,15 +54,15 @@ public class RotateLoadingLayout extends RefreshLoadingLayout {
 
         layoutParams = (LayoutParams) mRootView.getLayoutParams();
 
-        mRefreshing = mContext.getResources().getString(R.string.refreshrecycle_refreshing);
-        mLoading = mContext.getResources().getString(R.string.refreshrecycle_loading);
-        mComplete = mContext.getResources().getString(R.string.refreshrecycle_complete);
+        mRefreshing = "正在刷新";
+        mLoading = "正在加载";
+        mComplete = "更新完成";
         mLastUpdateTime = getLastTime();
         if (!TextUtils.isEmpty(mLastUpdateTime)) {
             mRefreshTime.setText(mLastUpdateTime);
         }
 
-        imageDrawable = mContext.getResources().getDrawable(R.mipmap.refreshrecycle_default_ptr_rotate);
+        imageDrawable = mContext.getResources().getDrawable(R.drawable.ptr_rotate_arrow);
         mImage.setScaleType(ImageView.ScaleType.MATRIX);
         mImageMatrix = new Matrix();
         mImage.setImageMatrix(mImageMatrix);
@@ -115,7 +114,7 @@ public class RotateLoadingLayout extends RefreshLoadingLayout {
         if (null != mRefreshText) {
             mRefreshText.setText(mComplete);
         }
-        mImage.setImageDrawable(getResources().getDrawable(R.mipmap.refreshrecycle_refresh_complete));
+        mImage.setImageDrawable(getResources().getDrawable(R.drawable.ptr_rotate_arrow));
         mImage.setVisibility(View.VISIBLE);
 
         mImage.clearAnimation();
