@@ -14,13 +14,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import cn.droidlover.xdroidmvp.R;
+import cn.droidlover.xdroidmvp.custom.LoadingDialog;
 import cn.droidlover.xdroidmvp.mvp.IPresent;
+import cn.droidlover.xdroidmvp.utils.toast.Toaster;
 
 /**
  * Created by ifmvo on 17-3-21.
  */
 
 public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivity<P> {
+
+    private LoadingDialog loadingDialog;
 
     protected RelativeLayout viewSuper;
     protected ImageView ivSuperBg;
@@ -51,6 +55,8 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
         line = findViewById(R.id.line);
         viewContent = (FrameLayout) findViewById(R.id.viewContent);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
+
+        loadingDialog = new LoadingDialog(context);
     }
 
     @Override
@@ -83,6 +89,23 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
     protected void setTopRightButton(String menuStr, View.OnClickListener onClickListener){
         this.onClickListener = onClickListener;
         this.menuStr = menuStr;
+    }
+
+    public void showLoading(boolean canceledOnTouchOutside) {
+        if (loadingDialog == null)
+            loadingDialog = new LoadingDialog(context);
+        loadingDialog.setCanceledOnTouchOutside(canceledOnTouchOutside);
+        loadingDialog.show();
+    }
+
+    public void closeLoading() {
+        if (loadingDialog != null && loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+        }
+    }
+
+    public void showError(String msg){
+        Toaster.showLong(context, msg);
     }
 
     /**

@@ -1,7 +1,6 @@
 package cn.droidlover.xdroidmvp.base.activity;
 
 
-import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -22,7 +21,7 @@ import cn.droidlover.xdroidmvp.base.fragment.XLazyFragment;
  * Created by ifmvo on 17-3-22.
  */
 
-public abstract class BaseActivityTab extends BaseActivity {
+public abstract class BaseActivityTab extends BaseActivityTopBar {
 
     /**
      * 显示 Fragment 的
@@ -46,27 +45,27 @@ public abstract class BaseActivityTab extends BaseActivity {
     private ArrayList<TabItem> tabItems;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayout() {
         return R.layout.base_activity_tab;
     }
 
     @Override
-    public void findView() {
+    protected void init() {
         lay_baseContent = findViewById(R.id.lay_baseContent);
 //        lay_baseLine = findViewById(R.id.lay_baseLine);
         lay_bottomTabs = (LinearLayout) findViewById(R.id.lay_bottomTabs);
-    }
 
-    @Override
-    public void initData(Bundle savedInstanceState) {
         fragmentManager = getSupportFragmentManager();
         tabItems = new ArrayList<>();
 
+    }
+
+    @Override
+    protected void postLoad() {
         initBottomTab();
 
         //默认是 0 的位置
         switchBottomTab(0);
-
     }
 
     /**

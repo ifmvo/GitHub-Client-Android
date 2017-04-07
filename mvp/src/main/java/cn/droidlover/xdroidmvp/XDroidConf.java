@@ -13,8 +13,8 @@ public class XDroidConf {
     public static final String LOG_TAG = "ceres";
 
     // #cache
-    public static final String CACHE_SP_NAME = "cn_com_hljdami.ceres";
-    public static final String CACHE_DISK_DIR = "ceres_disk_cache";
+    public static final String CACHE_SP_NAME = "cn_ifmvo_github_sp";
+    public static final String CACHE_DISK_DIR = "cn_ifmvo_github_dish";
 
     // #router
     public static final int ROUTER_ANIM_ENTER = Router.RES_NONE;

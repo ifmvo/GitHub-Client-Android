@@ -6,6 +6,7 @@ import cn.droidlover.xdroidmvp.net.NetError;
 import cn.droidlover.xdroidmvp.net.NetProvider;
 import cn.droidlover.xdroidmvp.net.RequestHandler;
 import cn.droidlover.xdroidmvp.net.XApi;
+import cn.droidlover.xdroidmvp.utils.sharedPreference.PreferBaseUtil;
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -20,6 +21,9 @@ public class GitHubApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        PreferBaseUtil.init(getApplicationContext());
+
         XApi.registerProvider(new NetProvider() {
 
             @Override
