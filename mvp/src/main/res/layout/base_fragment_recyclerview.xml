@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_lay_bg">
+
+    <LinearLayout
+        android:id="@+id/listTopFloatLay"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/listTopLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/listBottomLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" />
+
+    <space.sye.z.library.RefreshRecyclerView
+        android:id="@+id/pull_refresh_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/listTopLay"
+        android:layout_above="@id/listBottomLay" />
+
+    <RelativeLayout
+        android:id="@+id/errorLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnErrorRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="10dp"
+            android:padding="30dp"
+            android:text="点击重新获取"
+            android:textColor="@color/color_black_3" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -7,8 +7,7 @@
     android:paddingTop="12dp"
     android:paddingBottom="12dp"
     android:paddingLeft="24dp"
-    android:paddingRight="24dp"
-    >
+    android:paddingRight="24dp">
 
 
     <LinearLayout
@@ -22,8 +21,7 @@
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_marginLeft="20dp"
@@ -35,7 +33,7 @@
                 android:id="@+id/tv_refresh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
+                android:lines="1"
                 android:textAppearance="?android:attr/textAppearance"
                 android:textColor="#4D4D4D"
                 android:textStyle="bold"/>
@@ -44,7 +42,7 @@
                 android:id="@+id/tv_refresh_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
+                android:lines="1"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#4D4D4D"
                 android:visibility="gone"/>
@@ -52,7 +50,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 </RelativeLayout>

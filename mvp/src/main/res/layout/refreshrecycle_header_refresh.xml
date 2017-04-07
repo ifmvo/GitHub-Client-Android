@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@android:drawable/ic_dialog_alert" />
+                android:src="@drawable/animation_list_refreshrecycle_loading" />
 
             <!--<ProgressBar-->
             <!--android:id="@+id/ptr_classic_header_rotate_view_progressbar"-->

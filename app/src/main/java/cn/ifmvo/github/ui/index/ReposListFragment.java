@@ -1,69 +1,58 @@
 package cn.ifmvo.github.ui.index;
 
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.widget.Toast;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
-import cn.droidlover.xdroidmvp.base.fragment.XLazyFragment;
-
-import cn.ifmvo.github.adapter.ReposAdapter;
+import cn.droidlover.xdroidmvp.base.fragment.BaseFragmentRecyclerView;
+import cn.droidlover.xdroidmvp.utils.Logger.Logger;
+import cn.ifmvo.github.R;
 import cn.ifmvo.github.bean.BeanRepos;
 import cn.ifmvo.github.net.Common;
 import cn.ifmvo.github.presenter.ReposPresenter;
-
-import static cn.droidlover.xdroidmvp.R.id.recyclerView;
+import space.sye.z.library.adapter.BaseViewHolder;
+import space.sye.z.library.adapter.QuickRecycleAdapter;
 
 /**
+ *
  * Created by ifmvo on 17-4-6.
  */
+public class ReposListFragment extends BaseFragmentRecyclerView<ReposPresenter> {
 
-public class ReposListFragment extends XLazyFragment<ReposPresenter> {
-
-//    @BindView(R.id.recyclerViewContentLayout)
-
-    ReposAdapter reposAdapter;
-
-    @Override
-    public int getLayoutId() {
-        return R.layout.fragment_repos;
-    }
-
-    @Override
-    public void initData(Bundle savedInstanceState) {
-        recyclerView = (XRecyclerView) $(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        reposAdapter = new ReposAdapter(context);
-        recyclerView.setAdapter(reposAdapter);
-        reposAdapter.setRecItemClick(new RecyclerItemCallback<BeanRepos, ReposAdapter.ReposViewHolder>() {
-            @Override
-            public void onItemClick(int position, BeanRepos model, int tag, ReposAdapter.ReposViewHolder holder) {
-                Toast.makeText(context, model.clone_url, Toast.LENGTH_SHORT).show();
-            }
-        });
-        getP().listUserRepos("ifmvo", 1, 10, "", Common.sort.created, "");
-    }
+    QuickRecycleAdapter<BeanRepos> adapter;
 
     @Override
     public ReposPresenter newP() {
         return new ReposPresenter();
     }
 
-    public void showData(int page, List<BeanRepos> list) {
-        reposAdapter.setData(list);
-        reposAdapter.notifyDataSetChanged();
-//        recyclerContentLayout.showContent();
-//        if (page > 1) {
-//            reposAdapter.addData(list);
-//        } else {
-//            reposAdapter.setData(list);
-//        }
-//        recyclerContentLayout.getRecyclerView().setPage(page, 10);
+    @Override
+    public void initView() {
 
-//        if (getAdapter().getItemCount() < 1) {
-//            showEmpty();
-//        }
     }
 
+    @Override
+    public void getData(int indexPage, int pageSize) {
+        getP().listUserRepos("ifmvo", indexPage, pageSize, "", Common.sort.created, "");
+    }
+
+    @Override
+    public RecyclerView.Adapter getAdapter() {
+        adapter = new QuickRecycleAdapter<BeanRepos>(getContext(), R.layout.list_item_repos) {
+            @Override
+            protected void onSetItemData(BaseViewHolder holder, BeanRepos item, int viewType) {
+                holder.setText(R.id.tvTitle, item.clone_url);
+            }
+        };
+        return adapter;
+    }
+
+    @Override
+    public void onListItemClick(RecyclerView.ViewHolder holder, int position) {
+        Logger.e(adapter.getItem(position).clone_url);
+    }
+
+    public void showData(List<BeanRepos> reposes){
+        adapter.addAll(reposes);
+    }
 }

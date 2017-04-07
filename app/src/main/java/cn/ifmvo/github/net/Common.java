@@ -12,7 +12,6 @@ public class Common {
         public static final String updated = "updated";
         public static final String pushed = "pushed";
 
-
     }
 
 }

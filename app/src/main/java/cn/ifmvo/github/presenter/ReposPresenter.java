@@ -28,16 +28,19 @@ public class ReposPresenter extends XPresent<ReposListFragment> {
                     @Override
                     protected void onFail(NetError error) {
 //                        getV().showError(error.getMessage());
+//                        Logger.e(error.getMessage());
                     }
 
                     @Override
                     protected void onPre() {
+//                        Logger.e("pre");
+
 //                        getV().showLoading();
                     }
 
                     @Override
                     public void onNext(List<BeanRepos> beanReposes) {
-                        getV().showData(page, beanReposes);
+                        getV().showData(beanReposes);
                     }
                 });
     }
