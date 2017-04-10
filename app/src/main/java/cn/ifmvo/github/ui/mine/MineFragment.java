@@ -40,13 +40,15 @@ public class MineFragment extends XLazyFragment {
 
     public void refreshData(){
         BeanUser user = SPUtil.getInstance().getUser();
-        ILFactory.getLoader().loadNet(ivHead, user.avatar_url, new ILoader.Options(R.mipmap.ic_default_github, R.mipmap.ic_default_github));
-        tvName.setText(user.name);
-        tvLoginName.setText(user.login);
-//        tvCompany.setText(user.company);
-//        tvEmail.setText(user.email);
-//        tvWebsite.setText(user.blog);
-//        tvPosition.setText(user.location);
+        if (user != null){
+            ILFactory.getLoader().loadNet(ivHead, user.avatar_url, new ILoader.Options(R.mipmap.ic_default_github, R.mipmap.ic_default_github));
+            tvName.setText(user.name);
+            tvLoginName.setText(user.login);
+    //        tvCompany.setText(user.company);
+    //        tvEmail.setText(user.email);
+    //        tvWebsite.setText(user.blog);
+    //        tvPosition.setText(user.location);
+        }
     }
 
     @Override
