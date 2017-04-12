@@ -37,7 +37,7 @@ public class ReposListFragment extends BaseFragmentRecyclerView<ReposPresenter> 
     public void getData(int indexPage, int pageSize) {
         BeanUser user = SPUtil.getInstance().getUser();
         if (user != null){
-            getP().listUserRepos("ifmvo", indexPage, pageSize, "", Common.sort.created, "");
+            getP().listUserRepos(user.name, indexPage, pageSize, "", Common.sort.created, "");
         }
     }
 
