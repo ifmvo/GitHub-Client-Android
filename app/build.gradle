@@ -21,7 +21,4 @@ android {
 
 dependencies {
     compile project(':mvp')
-    compile rootProject.ext.mvp["butterknife-apt"]
-
-
 }

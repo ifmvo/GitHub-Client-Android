@@ -5,6 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 import cn.droidlover.xdroidmvp.base.activity.BaseActivityTab;
+import cn.droidlover.xdroidmvp.base.fragment.XLazyFragment;
 import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.R;
 import cn.ifmvo.github.bean.BeanUser;
@@ -30,8 +31,8 @@ public class MainActivity extends BaseActivityTab {
     @Override
     public ArrayList<TabItem> getTabItems() {
         ArrayList<TabItem> items = new ArrayList<>();
-        items.add(new TabItem(R.drawable.ic_home_black_24dp, R.drawable.ic_home_theme_24dp, "首页", new ReposListFragment()));
-        items.add(new TabItem(R.drawable.ic_mine_black_24dp, R.drawable.ic_mine_theme_24dp, "我的", new MineFragment()));
+        items.add(new TabItem(R.mipmap.ic_repos_def, R.mipmap.ic_repos_pre, "仓库", XLazyFragment.newInstance(context, ReposListFragment.class)));
+        items.add(new TabItem(R.mipmap.ic_mine_def, R.mipmap.ic_mine_pre, "我的", XLazyFragment.newInstance(context, MineFragment.class)));
         return items;
     }
 

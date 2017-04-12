@@ -11,12 +11,20 @@
         android:hint="用户名"
         android:layout_height="wrap_content" />
 
+    <!--<RadioButton-->
+        <!--android:id="@+id/rbRemember"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:text="记住用户名"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:layout_height="wrap_content" />-->
+
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:text="登录"
+        android:layout_marginTop="50dp"
         android:background="@color/color_green"
         android:layout_height="wrap_content" />
 

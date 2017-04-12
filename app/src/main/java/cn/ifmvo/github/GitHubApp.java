@@ -1,7 +1,6 @@
 package cn.ifmvo.github;
 
-import android.app.Application;
-
+import cn.droidlover.xdroidmvp.base.AppContextBase;
 import cn.droidlover.xdroidmvp.net.NetError;
 import cn.droidlover.xdroidmvp.net.NetProvider;
 import cn.droidlover.xdroidmvp.net.RequestHandler;
@@ -15,7 +14,7 @@ import okhttp3.OkHttpClient;
  * Created by Matthew_Chen on 2017/4/6.
  */
 
-public class GitHubApp extends Application {
+public class GitHubApp extends AppContextBase {
 
 
     @Override

@@ -20,6 +20,10 @@ public class SPUtil extends PreferBaseUtil{
         }
     }
 
+    /**
+     * User 信息
+     * @param beanUser
+     */
     public void saveUser(BeanUser beanUser){
         String str = JsonExplain.toJson(beanUser);
         putString("beanUser", str);
@@ -32,5 +36,22 @@ public class SPUtil extends PreferBaseUtil{
     public boolean clearUser(){
         return remove("beanUser");
     }
+
+
+    /**
+     * 登录是否记住用户名
+     * @param isRemeber
+     */
+//    public void saveIsRemeber(boolean isRemeber){
+//        putBoolean("isRemeber", isRemeber);
+//    }
+//
+//    public boolean getIsRemeber(){
+//        return getBoolean("isRemeber", false);
+//    }
+//
+//    public boolean clearIsRemember(){
+//        return remove("isRemeber");
+//    }
 
 }

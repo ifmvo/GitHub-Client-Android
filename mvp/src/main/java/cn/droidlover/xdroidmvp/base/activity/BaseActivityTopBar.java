@@ -1,6 +1,8 @@
 package cn.droidlover.xdroidmvp.base.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -151,5 +153,11 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
         }
 
         return true; //告诉系统我们自己处理了点击事件
+    }
+
+    protected void replaceFragment(int contentLayoutId, Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(contentLayoutId, fragment, fragment.getClass().getName());
+        transaction.commit();
     }
 }

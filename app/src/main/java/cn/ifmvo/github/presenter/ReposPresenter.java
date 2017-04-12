@@ -27,14 +27,12 @@ public class ReposPresenter extends XPresent<ReposListFragment> {
                 .subscribe(new ApiSubcriber<List<BeanRepos>>() {
                     @Override
                     protected void onFail(NetError error) {
-//                        getV().showError(error.getMessage());
+                        getV().showError(error.getMessage());
 //                        Logger.e(error.getMessage());
                     }
 
                     @Override
                     protected void onPre() {
-//                        Logger.e("pre");
-
 //                        getV().showLoading();
                     }
 

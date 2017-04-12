@@ -17,6 +17,7 @@ import cn.ifmvo.github.ui.MainActivity;
 public class LoginActivity extends BaseActivityTopBar<UserPresenter> {
     Button btnLogin;
     TextInputEditText etUsername;
+//    RadioButton rbRemember;
 
     @Override
     public UserPresenter newP() {
@@ -32,6 +33,12 @@ public class LoginActivity extends BaseActivityTopBar<UserPresenter> {
     protected void init() {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         etUsername = (TextInputEditText) findViewById(R.id.etUsername);
+//        rbRemember = (RadioButton)findViewById(R.id.rbRemember);
+
+//        if (rbRemember.isSelected()){
+//            SPUtil.getInstance().saveIsRemeber(true);
+//        }
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

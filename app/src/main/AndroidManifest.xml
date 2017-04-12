@@ -13,10 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name=".ui.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -28,6 +24,21 @@
         <!--登录-->
         <activity
             android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.mine.ReposListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.mine.SettingActivity"
             android:screenOrientation="portrait">
         </activity>
 

@@ -139,7 +139,7 @@ public class BeanRepos extends BaseBean {
     public int size;
     public int stargazers_count;
     public int watchers_count;
-    public Object language;
+    public String language;
     public boolean has_issues;
     public boolean has_projects;
     public boolean has_downloads;

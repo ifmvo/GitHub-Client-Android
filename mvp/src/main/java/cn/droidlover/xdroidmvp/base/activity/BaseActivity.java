@@ -11,6 +11,7 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import butterknife.Unbinder;
 import cn.droidlover.xdroidmvp.XDroidConf;
+import cn.droidlover.xdroidmvp.base.AppContextBase;
 import cn.droidlover.xdroidmvp.utils.event.BusProvider;
 import cn.droidlover.xdroidmvp.utils.KnifeKit;
 import cn.droidlover.xdroidmvp.mvp.IPresent;
@@ -36,6 +37,7 @@ public abstract class BaseActivity<P extends IPresent> extends RxAppCompatActivi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
+        AppContextBase.addActivity(this);
 
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());

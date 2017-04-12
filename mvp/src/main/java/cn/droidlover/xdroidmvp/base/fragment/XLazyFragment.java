@@ -111,4 +111,6 @@ public abstract class XLazyFragment<P extends IPresent>
     public boolean useEventBus() {
         return false;
     }
+
+
 }

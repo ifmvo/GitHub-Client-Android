@@ -31,6 +31,6 @@ public interface GitHubService {
             @Query("page") int page,
             @Query("per_page") int per_page,
             @Query("type") String type,
-            @Query("sort") String sort,
+            @Query("ReposSort") String sort,
             @Query("direction") String direction);
 }

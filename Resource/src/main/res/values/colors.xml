@@ -37,10 +37,12 @@
     <color name="color_gray_1">#fafafa</color>
 
 
-    <color name="color_blue">#0389b4</color>
-    <color name="color_red_light">#e54a4a</color>
+    <color name="color_blue">#0366d6</color>
+    <color name="color_red_light">#e34c26</color>
     <color name="color_red">#FF0000</color>
     <color name="color_yellow">#FFF7D23E</color>
     <color name="color_green">#32c955</color>
+    <color name="color_brown">#b07219</color>
+    <color name="color_pink">#b07219</color>
 
 </resources>
