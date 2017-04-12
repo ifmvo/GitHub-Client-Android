@@ -1,11 +1,14 @@
 package cn.ifmvo.github.ui;
 
 
+import android.view.View;
+
 import java.util.concurrent.TimeUnit;
 
 import cn.droidlover.xdroidmvp.base.activity.BaseActivityTopBar;
 import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.R;
+import cn.ifmvo.github.ui.login.LoginActivity;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -27,12 +30,15 @@ public class SplashActivity extends BaseActivityTopBar {
 
     @Override
     protected void init() {
-        Observable.timer(2, TimeUnit.SECONDS, AndroidSchedulers.mainThread()).subscribe(new Action1<Long>() {
+        toolbar.setVisibility(View.GONE);
+        Observable.timer(1, TimeUnit.SECONDS, AndroidSchedulers.mainThread()).subscribe(new Action1<Long>() {
             @Override
             public void call(Long aLong) {
                 Router.newIntent(context)
-                        .to(MainActivity.class)
+                        .to(LoginActivity.class)
                         .launch();
+
+                finish();
             }
         });
     }

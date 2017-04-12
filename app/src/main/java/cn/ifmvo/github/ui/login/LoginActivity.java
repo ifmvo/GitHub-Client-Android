@@ -5,8 +5,10 @@ import android.view.View;
 import android.widget.Button;
 
 import cn.droidlover.xdroidmvp.base.activity.BaseActivityTopBar;
+import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.R;
 import cn.ifmvo.github.presenter.UserPresenter;
+import cn.ifmvo.github.ui.MainActivity;
 
 /**
  * Created by ifmvo on 17-4-7.
@@ -45,6 +47,10 @@ public class LoginActivity extends BaseActivityTopBar<UserPresenter> {
     }
 
     public void actionMain(){
+
+        Router.newIntent(context)
+                .to(MainActivity.class)
+                .launch();
 
         finish();
     }

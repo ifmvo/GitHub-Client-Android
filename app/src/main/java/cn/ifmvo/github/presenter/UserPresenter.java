@@ -4,9 +4,7 @@ import cn.droidlover.xdroidmvp.mvp.XPresent;
 import cn.droidlover.xdroidmvp.net.ApiSubcriber;
 import cn.droidlover.xdroidmvp.net.NetError;
 import cn.droidlover.xdroidmvp.net.XApi;
-import cn.droidlover.xdroidmvp.utils.event.BusProvider;
 import cn.ifmvo.github.bean.BeanUser;
-import cn.ifmvo.github.event.LoginSuccessEvent;
 import cn.ifmvo.github.net.Api;
 import cn.ifmvo.github.sp.SPUtil;
 import cn.ifmvo.github.ui.login.LoginActivity;
@@ -38,7 +36,7 @@ public class UserPresenter extends XPresent<LoginActivity> {
                     @Override
                     public void onNext(BeanUser beanUser) {
                         SPUtil.getInstance().saveUser(beanUser);
-                        BusProvider.getBus().post(new LoginSuccessEvent());
+//                        BusProvider.getBus().post(new LoginSuccessEvent());
 
                         getV().closeLoading();
 

@@ -8,8 +8,10 @@ import cn.droidlover.xdroidmvp.base.fragment.BaseFragmentRecyclerView;
 import cn.droidlover.xdroidmvp.utils.Logger.Logger;
 import cn.ifmvo.github.R;
 import cn.ifmvo.github.bean.BeanRepos;
+import cn.ifmvo.github.bean.BeanUser;
 import cn.ifmvo.github.net.Common;
 import cn.ifmvo.github.presenter.ReposPresenter;
+import cn.ifmvo.github.sp.SPUtil;
 import space.sye.z.library.adapter.BaseViewHolder;
 import space.sye.z.library.adapter.QuickRecycleAdapter;
 
@@ -33,7 +35,10 @@ public class ReposListFragment extends BaseFragmentRecyclerView<ReposPresenter> 
 
     @Override
     public void getData(int indexPage, int pageSize) {
-        getP().listUserRepos("ifmvo", indexPage, pageSize, "", Common.sort.created, "");
+        BeanUser user = SPUtil.getInstance().getUser();
+        if (user != null){
+            getP().listUserRepos("ifmvo", indexPage, pageSize, "", Common.sort.created, "");
+        }
     }
 
     @Override

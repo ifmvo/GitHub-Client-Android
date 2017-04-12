@@ -35,6 +35,14 @@ public class MineFragment extends XLazyFragment {
 //        tvEmail = (TextView) $(R.id.tvEmail);
 //        tvWebsite = (TextView) $(R.id.tvWebsite);
         refreshData();
+
+//        BusProvider.getBus().toObservable(LoginSuccessEvent.class)
+//                .subscribe(new Action1<LoginSuccessEvent>() {
+//                    @Override
+//                    public void call(LoginSuccessEvent loginSuccessEvent) {
+//                        refreshData();
+//                    }
+//                });
     }
 
 
