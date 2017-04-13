@@ -93,6 +93,12 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
         this.menuStr = menuStr;
     }
 
+    protected void setTopRightButton(String menuStr, int menuResId, View.OnClickListener onClickListener){
+        this.menuResId = menuResId;
+        this.menuStr = menuStr;
+        this.onClickListener = onClickListener;
+    }
+
     public void showLoading(boolean canceledOnTouchOutside) {
         if (loadingDialog == null)
             loadingDialog = new LoadingDialog(context);
@@ -125,13 +131,11 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        if (menuResId != 0){
+        if (menuResId != 0) {
             menu.findItem(R.id.menu_1).setIcon(menuResId);
-        }else{
-            if (!TextUtils.isEmpty(menuStr)){
-                menu.findItem(R.id.menu_1).setTitle(menuStr);
-
-            }
+        }
+        if (!TextUtils.isEmpty(menuStr)){
+            menu.findItem(R.id.menu_1).setTitle(menuStr);
         }
         return super.onPrepareOptionsMenu(menu);
     }

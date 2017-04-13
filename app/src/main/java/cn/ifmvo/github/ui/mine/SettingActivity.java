@@ -32,6 +32,7 @@ public class SettingActivity extends BaseActivityTopBar {
     protected void init() {
         setTitle("设置");
         setTopLeftButton();
+
         tvLogout = (TextView) findViewById(R.id.tvLogout);
 
         tvLogout.setOnClickListener(new View.OnClickListener() {
