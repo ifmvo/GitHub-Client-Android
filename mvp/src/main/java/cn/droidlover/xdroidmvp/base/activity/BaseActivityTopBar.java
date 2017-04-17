@@ -31,9 +31,9 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
     protected RelativeLayout viewSuper;
     protected ImageView ivSuperBg;
     protected LinearLayout viewSubSuper;
-    protected Toolbar toolbar;
     protected View line;
     protected FrameLayout viewContent;
+    protected Toolbar toolbar;
     protected TextView tvTitle;
 
     protected LayoutInflater layoutInflater;
@@ -41,7 +41,8 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
     private int menuResId;
     private String menuStr;
 
-    private View.OnClickListener onClickListener;
+    private OnClickListener onClickListenerTopRight;
+    private OnClickListener onClickListenerTopLeft;
 
     @Override
     public int getLayoutId() {
@@ -54,9 +55,9 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
         ivSuperBg = (ImageView) findViewById(R.id.ivSuperBg);
         viewSubSuper = (LinearLayout) findViewById(R.id.viewSubSuper);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tvTitle = (TextView) findViewById(R.id.tvTitle);
         line = findViewById(R.id.line);
         viewContent = (FrameLayout) findViewById(R.id.viewContent);
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
 
         loadingDialog = new LoadingDialog(context);
     }
@@ -75,28 +76,29 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
         postLoad();
     }
 
-    protected void setTopLeftButton(int resId){
-        toolbar.setNavigationIcon(resId);
-    }
-
     protected void setTopLeftButton(){
-        setTopLeftButton(R.drawable.ic_return_white_24dp);
+        setTopLeftButton(R.drawable.ic_return_white_24dp, null);
     }
 
-    protected void setTopRightButton(int menuResId, View.OnClickListener onClickListener){
+    protected void setTopLeftButton(int resId, OnClickListener onClickListenerTopLeft){
+        toolbar.setNavigationIcon(resId);
+        this.onClickListenerTopLeft = onClickListenerTopLeft;
+    }
+
+    protected void setTopRightButton(int menuResId, OnClickListener onClickListener){
         this.menuResId = menuResId;
-        this.onClickListener = onClickListener;
+        this.onClickListenerTopRight = onClickListener;
     }
 
-    protected void setTopRightButton(String menuStr, View.OnClickListener onClickListener){
-        this.onClickListener = onClickListener;
+    protected void setTopRightButton(String menuStr, OnClickListener onClickListener){
+        this.onClickListenerTopRight = onClickListener;
         this.menuStr = menuStr;
     }
 
-    protected void setTopRightButton(String menuStr, int menuResId, View.OnClickListener onClickListener){
+    protected void setTopRightButton(String menuStr, int menuResId, OnClickListener onClickListener){
         this.menuResId = menuResId;
         this.menuStr = menuStr;
-        this.onClickListener = onClickListener;
+        this.onClickListenerTopRight = onClickListener;
     }
 
     public void showLoading(boolean canceledOnTouchOutside) {
@@ -151,9 +153,13 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home){
-            onBackPressed();
+            if (onClickListenerTopLeft == null){
+                onBackPressed();
+            }else{
+                onClickListenerTopLeft.onClick();
+            }
         }else if (item.getItemId() == R.id.menu_1){
-            onClickListener.onClick(null);
+            onClickListenerTopRight.onClick();
         }
 
         return true; //告诉系统我们自己处理了点击事件
@@ -163,5 +169,9 @@ public abstract class BaseActivityTopBar<P extends IPresent> extends BaseActivit
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(contentLayoutId, fragment, fragment.getClass().getName());
         transaction.commit();
+    }
+
+    public interface OnClickListener {
+        void onClick();
     }
 }

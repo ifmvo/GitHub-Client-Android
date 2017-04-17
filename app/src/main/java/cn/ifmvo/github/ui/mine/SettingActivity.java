@@ -32,6 +32,12 @@ public class SettingActivity extends BaseActivityTopBar {
     protected void init() {
         setTitle("设置");
         setTopLeftButton();
+//        setTopRightButton(R.drawable.ic_mine_black_24dp, new OnClickListener() {
+//            @Override
+//            public void onClick() {
+//
+//            }
+//        });
 
         tvLogout = (TextView) findViewById(R.id.tvLogout);
 
