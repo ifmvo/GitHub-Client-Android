@@ -1,9 +1,9 @@
-package cn.ifmvo.github.ui.mine;
+package cn.ifmvo.github.ui.activity;
 
 import cn.droidlover.xdroidmvp.base.activity.BaseActivityTopBar;
 import cn.droidlover.xdroidmvp.base.fragment.XLazyFragment;
 import cn.ifmvo.github.R;
-import cn.ifmvo.github.ui.index.ReposListFragment;
+import cn.ifmvo.github.ui.fragment.ReposListFragment;
 
 /**
  * Created by Matthew_Chen on 2017/4/12.

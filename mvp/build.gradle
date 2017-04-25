@@ -42,6 +42,6 @@ dependencies {
     compile rootProject.ext.mvp["rxpermissions"]
     //    compile rootProject.ext.mvp["controller"]
     compile rootProject.ext.mvp["avi-loading"]
-
     //    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.github.ksoichiro:android-observablescrollview:1.6.0'
 }

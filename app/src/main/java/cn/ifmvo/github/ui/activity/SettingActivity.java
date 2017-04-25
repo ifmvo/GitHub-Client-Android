@@ -1,4 +1,4 @@
-package cn.ifmvo.github.ui.mine;
+package cn.ifmvo.github.ui.activity;
 
 import android.view.View;
 import android.widget.TextView;
@@ -7,7 +7,7 @@ import cn.droidlover.xdroidmvp.base.activity.BaseActivityTopBar;
 import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.GitHubApp;
 import cn.ifmvo.github.R;
-import cn.ifmvo.github.ui.login.LoginActivity;
+import cn.ifmvo.github.ui.activity.LoginActivity;
 
 /**
  * Created by Matthew_Chen on 2017/4/12.

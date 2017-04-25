@@ -1,4 +1,4 @@
-package cn.ifmvo.github.ui;
+package cn.ifmvo.github.ui.activity;
 
 import android.view.View;
 
@@ -10,9 +10,8 @@ import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.R;
 import cn.ifmvo.github.bean.BeanUser;
 import cn.ifmvo.github.sp.SPUtil;
-import cn.ifmvo.github.ui.index.ReposListFragment;
-import cn.ifmvo.github.ui.login.LoginActivity;
-import cn.ifmvo.github.ui.mine.MineFragment;
+import cn.ifmvo.github.ui.fragment.ReposListFragment;
+import cn.ifmvo.github.ui.fragment.MineFragment;
 
 public class MainActivity extends BaseActivityTab {
 

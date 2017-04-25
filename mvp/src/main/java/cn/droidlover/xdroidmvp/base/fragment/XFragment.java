@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +14,12 @@ import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.Unbinder;
 import cn.droidlover.xdroidmvp.XDroidConf;
-import cn.droidlover.xdroidmvp.utils.event.BusProvider;
-import cn.droidlover.xdroidmvp.utils.KnifeKit;
 import cn.droidlover.xdroidmvp.mvp.IPresent;
 import cn.droidlover.xdroidmvp.mvp.IView;
 import cn.droidlover.xdroidmvp.mvp.VDelegate;
 import cn.droidlover.xdroidmvp.mvp.VDelegateBase;
+import cn.droidlover.xdroidmvp.utils.KnifeKit;
+import cn.droidlover.xdroidmvp.utils.event.BusProvider;
 
 /**
  * Created by wanglei on 2016/12/29.
@@ -28,7 +29,7 @@ public abstract class XFragment<P extends IPresent> extends RxFragment implement
 
     private VDelegate vDelegate;
     private P p;
-    protected Activity context;
+    protected FragmentActivity context;
     private View rootView;
     protected LayoutInflater layoutInflater;
 
@@ -91,7 +92,7 @@ public abstract class XFragment<P extends IPresent> extends RxFragment implement
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.context = (Activity) context;
+            this.context = (FragmentActivity) context;
         }
     }
 

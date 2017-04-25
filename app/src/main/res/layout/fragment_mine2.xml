@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/materialScrollingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary" >
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/bgImage"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="280dp"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:src="@drawable/bg_image" />-->
+
+    <jp.satorufujiwara.scrolling.MaterialScrollingViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ms_base_height="50dp"
+        app:ms_flexible_height="250dp" />
+    <!--ViewPager 离上面的高度-->
+
+    <View
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_blue"
+        android:layout_marginTop="200dp" />
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolBar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+
+    <LinearLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/color_red"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+</FrameLayout>

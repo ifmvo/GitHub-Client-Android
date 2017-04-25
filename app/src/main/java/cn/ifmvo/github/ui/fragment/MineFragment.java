@@ -1,4 +1,4 @@
-package cn.ifmvo.github.ui.mine;
+package cn.ifmvo.github.ui.fragment;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +12,8 @@ import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.R;
 import cn.ifmvo.github.bean.BeanUser;
 import cn.ifmvo.github.sp.SPUtil;
+import cn.ifmvo.github.ui.activity.ReposListActivity;
+import cn.ifmvo.github.ui.activity.SettingActivity;
 
 /**
  * Created by Matthew_Chen on 2017/4/6.

@@ -1,4 +1,4 @@
-package cn.ifmvo.github.ui.login;
+package cn.ifmvo.github.ui.activity;
 
 import android.support.design.widget.TextInputEditText;
 import android.view.View;
@@ -8,7 +8,6 @@ import cn.droidlover.xdroidmvp.base.activity.BaseActivityTopBar;
 import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.R;
 import cn.ifmvo.github.presenter.UserPresenter;
-import cn.ifmvo.github.ui.MainActivity;
 
 /**
  * Created by ifmvo on 17-4-7.

@@ -1,4 +1,4 @@
-package cn.ifmvo.github.ui;
+package cn.ifmvo.github.ui.activity;
 
 
 import android.view.View;
@@ -10,7 +10,6 @@ import cn.droidlover.xdroidmvp.utils.router.Router;
 import cn.ifmvo.github.R;
 import cn.ifmvo.github.bean.BeanUser;
 import cn.ifmvo.github.sp.SPUtil;
-import cn.ifmvo.github.ui.login.LoginActivity;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;

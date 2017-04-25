@@ -8,7 +8,7 @@ import cn.droidlover.xdroidmvp.net.NetError;
 import cn.droidlover.xdroidmvp.net.XApi;
 import cn.ifmvo.github.bean.BeanRepos;
 import cn.ifmvo.github.net.Api;
-import cn.ifmvo.github.ui.index.ReposListFragment;
+import cn.ifmvo.github.ui.fragment.ReposListFragment;
 
 /**
  * Created by Matthew_Chen on 2017/4/6.

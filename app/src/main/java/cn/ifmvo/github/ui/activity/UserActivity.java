@@ -1,4 +1,4 @@
-package cn.ifmvo.github.ui;
+package cn.ifmvo.github.ui.activity;
 
 import cn.droidlover.xdroidmvp.base.activity.BaseActivityTopBar;
 import cn.droidlover.xdroidmvp.utils.Logger.Logger;

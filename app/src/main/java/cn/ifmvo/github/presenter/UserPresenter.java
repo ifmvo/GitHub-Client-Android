@@ -7,7 +7,7 @@ import cn.droidlover.xdroidmvp.net.XApi;
 import cn.ifmvo.github.bean.BeanUser;
 import cn.ifmvo.github.net.Api;
 import cn.ifmvo.github.sp.SPUtil;
-import cn.ifmvo.github.ui.login.LoginActivity;
+import cn.ifmvo.github.ui.activity.LoginActivity;
 
 /**
  * Created by Matthew_Chen on 2017/4/6.

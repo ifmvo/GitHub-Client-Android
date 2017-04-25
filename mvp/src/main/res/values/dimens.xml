@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="fab_scaling_height">156dp</dimen>
+    <dimen name="title_scroll_height">156dp</dimen>
+</resources>
